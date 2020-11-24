@@ -1,7 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="Auction.MainPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Account.Master" CodeBehind="MainPage.aspx.cs" Inherits="Auction.MainPage" %>
 
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+   
+</asp:Content>
 
- <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">   
+ <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">   
         <div>
             <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" SelectedRowStyle-BackColor="#99ccff" DataKeyNames="idtorg, idtovar" DataSourceID="SqlDataSource1" AllowSorting="True" OnSelectedIndexChanged="GridView2_SelectedIndexChanged">
                 <Columns>
@@ -15,6 +18,6 @@
                 </Columns>
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AuctionConnectionString %>" ProviderName="<%$ ConnectionStrings:AuctionConnectionString.ProviderName %>" SelectCommand="SELECT * FROM torg WHERE data_close IS NULL"></asp:SqlDataSource>
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Label" Visible="false" ></asp:Label >
         </div>
 </asp:Content>

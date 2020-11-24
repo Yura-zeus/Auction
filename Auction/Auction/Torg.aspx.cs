@@ -21,7 +21,7 @@ namespace Auction
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            MasterPageFile = "Account.Master";
+            MasterPageFile = Application["masterPage"].ToString();
         }
 
         protected void Page_Load(object sender, EventArgs e)

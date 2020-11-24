@@ -14,6 +14,7 @@ namespace Auction
         protected void Page_Load(object sender, EventArgs e)
         {
             Label1.Text += Application["user_phone"].ToString();
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)

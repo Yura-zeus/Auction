@@ -161,3 +161,14 @@ FOR EACH ROW EXECUTE PROCEDURE insert_torg_history_stavka();
 
 ALTER TABLE pokupatel
 	ADD COLUMN prodavec_request BOOL NOT NULL DEFAULT False; -- Заявка стать продавцом
+	
+	
+CREATE OR REPLACE FUNCTION Pokupatel_to_Prodavec(p_idpolzovately int)
+							RETURNS VOID
+AS $$
+BEGIN
+	INSERT INTO Prodavec (idpolzovately) VALUES (p_idpolzovately);
+	
+	UPDATE Pokupatel SET prodavec_request = false WHERE idpolzovately = p_idpolzovately;
+END;
+$$ LANGUAGE 'plpgsql';

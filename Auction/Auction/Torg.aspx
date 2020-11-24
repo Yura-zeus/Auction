@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Torg.aspx.cs" Inherits="Auction.torg" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Account.Master" CodeBehind="Torg.aspx.cs" Inherits="Auction.torg" %>
 
 
  <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">   
@@ -17,7 +17,7 @@
             <asp:TextBox ID="TextBox1" runat="server" Height="16px" TextMode="Number" placeholder="Введите ставку" Width="199px"></asp:TextBox>
 
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Ставка" />
-             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Ставка" />
+             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Закрыть торг" style="float:right"/>
 
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AuctionConnectionString %>" ProviderName="<%$ ConnectionStrings:AuctionConnectionString.ProviderName %>"
                 SelectCommand="SELECT * FROM torg_history where idtorg = @idtorg">

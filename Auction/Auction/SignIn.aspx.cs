@@ -44,6 +44,18 @@ namespace Auction
                 //Response.Cookies.Add(new HttpCookie("user_role", role));
                 Application.Add("user_phone", this.login.Text);
                 Application.Add("user_role", role);
+                string master = "", conn="";
+
+                switch(role)
+                {
+                    case "Customer": master = "Account.Master"; conn = "CustomerConnectionString"; break;
+                    case "Seller": master = "Seller.Master"; conn = "SellerConnectionString"; break;
+                    case "Admin": master = "Admin.Master"; conn = "AdminConnectionString"; break;
+                }
+
+                Application.Add("MasterPage", master);
+                Application.Add("ConnectionString", conn);
+
                 login.Text = "";
 
                // login.Text = Response.Cookies["user_phone"].Value.ToString() + " " + Response.Cookies["user_role"].Value.ToString();
